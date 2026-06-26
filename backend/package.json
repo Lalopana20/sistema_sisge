@@ -1,0 +1,48 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "API REST - SISGE Sistema de Gestión de Almacén",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "jest --runInBand",
+    "test:watch": "jest --watch",
+    "lint": "eslint src/ tests/ scripts/",
+    "lint:fix": "eslint src/ tests/ scripts/ --fix",
+    "setup:usuarios": "node scripts/setupUsuarios.js",
+    "setup:subcategorias": "node scripts/setupSubcategorias.js",
+    "setup:auditoria": "node scripts/setupAuditoria.js",
+    "test:alertas": "node scripts/testAlertas.js",
+    "seed:recientes": "node src/seed/seedDatosRecientes.js"
+  },
+  "keywords": [],
+  "author": "SISGE",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "compression": "^1.8.1",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.4.2",
+    "exceljs": "^3.4.0",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.5.2",
+    "helmet": "^8.2.0",
+    "joi": "^18.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mammoth": "^1.12.0",
+    "multer": "^2.1.1",
+    "mysql2": "^3.22.3",
+    "node-cron": "^4.2.1",
+    "pdf-parse": "^2.4.5",
+    "winston": "^3.19.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.4.0",
+    "globals": "^17.6.0",
+    "jest": "^30.4.2",
+    "nodemon": "^3.1.14"
+  }
+}

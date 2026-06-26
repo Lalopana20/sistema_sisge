@@ -1,0 +1,13 @@
+/* Estilos globales adicionales — los principales están en index.css */
+
+/* Fila con stock crítico en tabla */
+.ant-table-row-danger td {
+  background-color: #fff2f0 !important;
+}
+
+/* Animación suave en tarjetas */
+.stat-card:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease;
+  box-shadow: 0 4px 16px rgba(0,0,0,.12) !important;
+}

@@ -1,0 +1,198 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   TOP PRODUCTOS RANKING - Estilos modernos con medallas
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.top-productos-ranking {
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  height: 100%;
+}
+
+.top-productos-ranking__loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.top-productos-ranking__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.producto-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: white;
+}
+
+.producto-item.clickable {
+  cursor: pointer;
+}
+
+.producto-item.clickable:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: rgba(24, 144, 255, 0.3);
+}
+
+.producto-item.top-three {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.05) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+.producto-item__rank {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  flex-shrink: 0;
+}
+
+.producto-item__medal {
+  font-size: 32px;
+  animation: medalShine 2s ease-in-out infinite;
+}
+
+@keyframes medalShine {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(5deg);
+  }
+}
+
+.producto-item__number {
+  font-size: 20px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.25);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.producto-item__content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.producto-item__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.producto-item__name {
+  font-weight: 600;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.85);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.producto-item__code {
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.04);
+  padding: 2px 6px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.producto-item__category {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.producto-item__stats {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.producto-item__movements {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: rgba(0, 0, 0, 0.65);
+  font-weight: 500;
+}
+
+.producto-item__quantity {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+
+.producto-item__quantity-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1890ff;
+  line-height: 1;
+}
+
+.producto-item__quantity-label {
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.45);
+  margin-top: 2px;
+}
+
+/* Animación al cargar */
+.producto-item {
+  animation: fadeInSlide 0.5s ease-out;
+  animation-fill-mode: both;
+}
+
+.producto-item:nth-child(1) { animation-delay: 0.05s; }
+.producto-item:nth-child(2) { animation-delay: 0.1s; }
+.producto-item:nth-child(3) { animation-delay: 0.15s; }
+.producto-item:nth-child(4) { animation-delay: 0.2s; }
+.producto-item:nth-child(5) { animation-delay: 0.25s; }
+.producto-item:nth-child(6) { animation-delay: 0.3s; }
+.producto-item:nth-child(7) { animation-delay: 0.35s; }
+.producto-item:nth-child(8) { animation-delay: 0.4s; }
+.producto-item:nth-child(9) { animation-delay: 0.45s; }
+.producto-item:nth-child(10) { animation-delay: 0.5s; }
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .producto-item {
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+
+  .producto-item__quantity {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 8px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .producto-item__medal {
+    font-size: 28px;
+  }
+}

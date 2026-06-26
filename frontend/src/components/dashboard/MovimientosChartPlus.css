@@ -1,0 +1,118 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   MOVIMIENTOS CHART PLUS - Estilos modernos
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.movimientos-chart-plus {
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.movimientos-chart-plus__icon {
+  color: #1890ff;
+  font-size: 18px;
+}
+
+.movimientos-chart-plus__controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.movimientos-chart-plus__controls-label {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 13px;
+}
+
+.period-button {
+  border-radius: 8px;
+  font-size: 12px;
+  transition: all 0.3s;
+}
+
+.period-button:hover {
+  transform: translateY(-1px);
+}
+
+.movimientos-chart-plus__toggles {
+  padding-top: 4px;
+}
+
+.movimientos-chart-plus__chart {
+  min-height: 300px;
+  position: relative;
+}
+
+.movimientos-chart-plus__loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+/* Tooltip personalizado */
+.movimientos-tooltip {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.movimientos-tooltip__title {
+  font-weight: 600;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.85);
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.movimientos-tooltip__content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.movimientos-tooltip__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.movimientos-tooltip__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.movimientos-tooltip__label {
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.movimientos-tooltip__value {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.85);
+  margin-left: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .movimientos-chart-plus__controls {
+    gap: 8px;
+  }
+
+  .period-button {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  .movimientos-chart-plus__chart {
+    min-height: 250px;
+  }
+}
