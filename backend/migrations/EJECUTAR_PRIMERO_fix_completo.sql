@@ -152,15 +152,16 @@ CREATE TABLE IF NOT EXISTS permisos (
 
 -- ============================================================
 -- PASO 4: Tabla permisos_usuario (overrides individuales)
+-- IMPORTANTE: NULL = heredar del rol, TRUE/FALSE = override explícito
 -- ============================================================
 CREATE TABLE IF NOT EXISTS permisos_usuario (
   id             INT AUTO_INCREMENT PRIMARY KEY,
   id_usuario     INT NOT NULL,
   modulo         VARCHAR(50) NOT NULL,
-  puede_ver      BOOLEAN NOT NULL DEFAULT FALSE,
-  puede_crear    BOOLEAN NOT NULL DEFAULT FALSE,
-  puede_editar   BOOLEAN NOT NULL DEFAULT FALSE,
-  puede_eliminar BOOLEAN NOT NULL DEFAULT FALSE,
+  puede_ver      BOOLEAN NULL DEFAULT NULL,
+  puede_crear    BOOLEAN NULL DEFAULT NULL,
+  puede_editar   BOOLEAN NULL DEFAULT NULL,
+  puede_eliminar BOOLEAN NULL DEFAULT NULL,
   asignado_por   INT NULL,
   motivo         VARCHAR(255) NULL,
   created_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP,

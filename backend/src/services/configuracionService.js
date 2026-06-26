@@ -15,6 +15,12 @@ const ConfiguracionService = {
     return config;
   },
 
+  async obtenerPorId(id) {
+    const config = await ConfiguracionModel.obtenerPorId(id);
+    if (!config) throw httpError(404, 'Configuración no encontrada');
+    return config;
+  },
+
   async crear({ clave, valor, descripcion }) {
     const existe = await ConfiguracionModel.obtener(clave);
     if (existe) throw httpError(409, `La configuración '${clave}' ya existe`);

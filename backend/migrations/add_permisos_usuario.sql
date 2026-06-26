@@ -10,18 +10,19 @@ USE sisge_almacen;
 -- Permite sobreescribir los permisos del rol para un usuario
 -- específico. Cada fila es un "override" del permiso del rol.
 --
--- tipo_override:
---   'AMPLIAR'    → el usuario GANA este permiso aunque el rol no lo tenga
---   'RESTRINGIR' → el usuario PIERDE este permiso aunque el rol lo tenga
+-- IMPORTANTE: Los valores NULL indican "heredar del rol"
+--   - NULL      → usar permiso del rol (heredar)
+--   - TRUE      → permiso explícitamente concedido
+--   - FALSE     → permiso explícitamente denegado
 -- ------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS permisos_usuario (
   id              INT AUTO_INCREMENT PRIMARY KEY,
   id_usuario      INT NOT NULL,
   modulo          VARCHAR(50) NOT NULL,
-  puede_ver       BOOLEAN NOT NULL DEFAULT FALSE,
-  puede_crear     BOOLEAN NOT NULL DEFAULT FALSE,
-  puede_editar    BOOLEAN NOT NULL DEFAULT FALSE,
-  puede_eliminar  BOOLEAN NOT NULL DEFAULT FALSE,
+  puede_ver       BOOLEAN NULL DEFAULT NULL,
+  puede_crear     BOOLEAN NULL DEFAULT NULL,
+  puede_editar    BOOLEAN NULL DEFAULT NULL,
+  puede_eliminar  BOOLEAN NULL DEFAULT NULL,
   -- Quién asignó este permiso y cuándo
   asignado_por    INT NULL,
   motivo          VARCHAR(200) NULL,

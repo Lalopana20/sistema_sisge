@@ -32,7 +32,7 @@ const ConfiguracionController = {
 
   async actualizar(req, res, next) {
     try {
-      const antes = await ConfiguracionService.obtener(req.params.clave);
+      const antes = await ConfiguracionService.obtenerPorId(req.params.id);
       const data  = await ConfiguracionService.actualizar(req.params.id, req.body);
       await audit.registrar(req, {
         accion: 'EDITAR',
@@ -47,7 +47,7 @@ const ConfiguracionController = {
 
   async eliminar(req, res, next) {
     try {
-      const antes = await ConfiguracionService.obtener(req.params.clave);
+      const antes = await ConfiguracionService.obtenerPorId(req.params.id);
       const data  = await ConfiguracionService.eliminar(req.params.id);
       await audit.registrar(req, {
         accion: 'ELIMINAR',

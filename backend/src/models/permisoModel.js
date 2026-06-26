@@ -69,9 +69,15 @@ const PermisoModel = {
 
   /**
    * Guarda o actualiza el override de un módulo para un usuario.
+   * Valores permitidos:
+   *   - undefined/null → guardar como NULL (heredar del rol)
+   *   - true/false     → guardar explícitamente
    */
   async guardarPermisoUsuario(id_usuario, modulo, { puede_ver, puede_crear, puede_editar, puede_eliminar }, asignado_por, motivo) {
-    const toDb = (val) => val === undefined ? null : !!val;
+    const toDb = (val) => {
+      if (val === undefined || val === null) return null;
+      return !!val;
+    };
     const [result] = await db.query(
       `INSERT INTO permisos_usuario
          (id_usuario, modulo, puede_ver, puede_crear, puede_editar, puede_eliminar, asignado_por, motivo)
